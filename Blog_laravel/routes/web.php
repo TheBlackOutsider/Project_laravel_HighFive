@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+Route::get('/', [PagesController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,9 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/contact-us', function () {
-    return view('layouts.contact');
-});
+Route::get('/contact-us', [PagesController::class, 'contact']);
+
+Route::get('/about', [PagesController::class, 'about']);
+
+Route::get('/articles', [ArticlesController::class, 'index']);
+
 
 
 

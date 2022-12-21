@@ -1,7 +1,12 @@
 
 @extends('layouts.master')
-<h2>Contactez nous !</h2>
 
-@section('content')
+@section('_contact')
     <h2>Contactez nous !</h2>
+
+
+
+
+
+
 @endsection
