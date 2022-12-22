@@ -34,7 +34,11 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::get('/articles', [ArticlesController::class, 'index']);
 
+// Route::get('/articles/{{$detail->id}}', [ArticlesController::class, 'getDetails']);
 
+Route::get('articles/{id}', [ArticlesController::class, 'show']);
+
+// Route::get('articles/{id}', [ArticlesController::class, 'show']);
 
 
 

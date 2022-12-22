@@ -1,4 +1,3 @@
-require "App"
 
 @extends('layouts.master')
 
@@ -9,14 +8,14 @@ Articles
 
 @section('_articles')
     <h2>Articles</h2>
-    <div>
+    <article>
         {{-- make a loop condition to display the articles if they exists  --}}
         @forelse($articles as $article)
-            @include('articles.index')
+            @include('partials.article')
         @empty
-            @include('articles.no-articles')
+            @include('partials.no-articles')
         @endforelse
-    </div>
+    </article>
 
 
 

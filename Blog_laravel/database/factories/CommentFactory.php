@@ -29,7 +29,7 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'comment' => $this->faker->text(50),
+            'comment' => $this->faker->text(200),
             'user_id' => function () {
                 return User::inRandomOrder()->first()->id;
             },

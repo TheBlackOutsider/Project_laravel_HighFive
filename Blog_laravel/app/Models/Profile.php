@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
 
-class Article extends Model
+class Profile extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        ''
 
     ];
 

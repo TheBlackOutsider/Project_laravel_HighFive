@@ -32,14 +32,21 @@ class ArticleFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition()
-    {
+    {   
         return [
             'title' => $this->faker->text(15),
-            'body' => $this->faker->text(200),
+            'body' => $this->faker->text(2000),
             'user_id' => function () {
                 return User::inRandomOrder()->first()->id;
             },
-            'image' => $this->faker->image('public/images'),
+            'image' => function () {
+                $file = __DIR__ .'public.IMG-202212';
+                $images = [];
+                array_push($images, $file . rand(0,20) . 'png');
+                foreach($images as $image){
+                    return $image;
+                }
+            },
         ];
     }
 }
